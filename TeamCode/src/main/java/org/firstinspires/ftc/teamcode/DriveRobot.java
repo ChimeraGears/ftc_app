@@ -4,11 +4,9 @@
 
 package org.firstinspires.ftc.teamcode;
 
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.util.ElapsedTime;
 import com.qualcomm.robotcore.util.Range;
 
@@ -17,9 +15,9 @@ import com.qualcomm.robotcore.util.Range;
  * Basic TeleOpMode Program to drive a two wheel robot with one joystick
  */
 
-@TeleOp(name="TeleOpMode", group="Linear Opmode")
+@TeleOp(name="Basic Driving Mode", group="Linear Opmode")
 // @Disabled
-public class TestOpMode extends LinearOpMode {
+public class DriveRobot extends LinearOpMode {
 
     // Declare OpMode members.
     private ElapsedTime runtime = new ElapsedTime();
@@ -39,8 +37,8 @@ public class TestOpMode extends LinearOpMode {
 
         // Most robots need the motor on one side to be reversed to drive forward
         // Reverse the motor that runs backwards when connected directly to the battery
-        leftDrive0.setDirection(DcMotor.Direction.FORWARD);
-        rightDrive0.setDirection(DcMotor.Direction.REVERSE);
+        leftDrive0.setDirection(DcMotor.Direction.REVERSE);
+        rightDrive0.setDirection(DcMotor.Direction.FORWARD);
 
         // Wait for the game to start (driver presses PLAY)
         waitForStart();
